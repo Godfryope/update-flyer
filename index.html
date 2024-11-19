@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- MDB -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f5f5f5;
+    }
+
+    .template-container {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin: 20px auto;
+        border-radius: 50%;
+        background-color: #2662a1;
+    }
+
+    .template .image {
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .template {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .circle-text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-container {
+        position: absolute;
+        bottom: 90px;
+        left: 106px;
+        width: 290px;
+        text-align: center;
+        color: white;
+        background-color: #2662a1;
+        box-shadow: 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-container h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .text-container p {
+        margin: 0;
+        padding-top: 0;
+        font-size: 12px;
+    }
+
+    /* Logo container at the top left and right of text-container */
+    .logo-container {
+        position: absolute;
+        display: flex;
+        justify-content: space-between; /* Space the logos apart */
+        width: 100%;
+        padding: 0 65px; /* Space logos from edges */
+        bottom: 115px;
+    }
+
+    .logo-container img {
+        width: 120px; /* Control the size */
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Right Logo */
+    .right-logo {
+        width: 150px;
+    }
+
+    /* Left Logo */
+    .left-logo {
+        width: 150px;
+    }
+
+    /* Adjust positioning for small screens using MDB classes */
+    @media (max-width: 768px) {
+        .right-logo, .left-logo {
+            display: block;
+            margin: 10px auto;
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .years-text {
+        position: absolute;
+        bottom: 3%;
+        width: 100%;
+        text-align: center;
+        color: #fcb13a;
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    form {
+        margin: 20px auto;
+    }
+
+    form input {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 80%;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #004a99;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .alert {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .input-group-text {
+        background-color: #f0f0f0;
+        border: none;
+        font-size: 16px;
+    }
+
+    .form-label {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    #updateButton, #downloadButton {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .alert {
+            font-size: 13px;
+        }
+
+        #updateButton, #downloadButton {
+            font-size: 14px;
+            padding: 8px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .input-group-text {
+            font-size: 14px;
+        }
+    }
+
+
+  </style>
+</head>
+
+<body>
+    <div class="template-container" id="templateContainer">
+      <div class="template" id="template">
+        <!-- Power-clipped image -->
+        <img class="image" id="templateImage" src="./img/16913222458743.jpg" alt="Profile Image">
+        
+        <!-- Circular text -->
+        <svg class="p-0" width="500" height="500">
+          <defs>
+            <path id="circularText" d="M 250,450 a 200,200 0 1,1 0,-400 a 200,200 0 1,1 0,400"/>
+          </defs>
+          
+          <text font-size="15" fill="white">
+            <textPath class="fs-3" xlink:href="#circularText" text-anchor="start" startOffset="15%">
+              CELEBRATING 70 YEARS OF ANNOUNCIATION CATHOLIC COLLEGE IRRUA
+            </textPath>
+          </text>
+        </svg>
+
+        <div class="years-text">
+          <p>1944 - 2024</p>
+        </div>
+      </div>
+
+      
+      <!-- Logo Container -->
+      <div class="logo-container">
+        <!-- Right Logo -->
+        <div class="right-logo">
+          <img src="./img/Untitled 1.png" alt="Logo">
+        </div>
+        
+        <!-- Left Logo -->
+        <!-- <div class="left-logo">
+          <img src="./Name.png" alt="Logo">
+        </div> -->
+      </div>
+      <!-- Name and Class -->
+      <div class="text-container">
+        <h3 id="templateName">Dr Akhere Oshodin</h3>
+        <p style="color: rgb(206, 197, 147);" class="fw-bold">Class of <span id="templateClass">1999</span></p>
+      </div>
+
+      
+    </div>
+  
+  <div class="container mt-4">
+    <!-- User Instructions -->
+    <div class="alert alert-info text-center" role="alert">
+        <strong>Welcome!</strong> Please upload your picture, enter your name, and class details below.
+        Once completed, click "Update Template" to generate your card and "Download as JPG" to save it.
+    </div>
+
+    <!-- Form Start -->
+    <form id="templateForm">
+        <!-- Image Input -->
+        <div class="row mb-1">
+            <label for="imageInput" class="form-label fs-14 text-dark">Upload Your Picture</label>
+            <div class="input-group">
+                <div class="input-group-text"><i class="ri-upload-line"></i></div>
+                <input type="file" class="form-control" id="imageInput" accept="image/*">
+            </div>
+        </div>
+
+        <!-- Name Input -->
+        <div class="mb-1">
+            <label for="nameInput" class="form-label fs-14 text-dark">Enter Your Name</label>
+            <div class="input-group">
+                <div class="input-group-text"><i class="ri-user-line"></i></div>
+                <input type="text" class="form-control" id="nameInput" placeholder="E.g., Dr. Akhere Oshodin">
+            </div>
+        </div>
+
+        <!-- Class Input -->
+        <div class="mb-1">
+            <label for="classInput" class="form-label fs-14 text-dark">Enter Your Class</label>
+            <div class="input-group">
+                <div class="input-group-text"><i class="ri-classroom-line"></i></div>
+                <input type="text" class="form-control" id="classInput" placeholder="E.g., 1999">
+            </div>
+        </div>
+
+        <!-- Update Button -->
+        <button type="button" id="updateButton" class="btn btn-primary w-100">Update Template</button>
+    </form>
+
+    <!-- Download Button -->
+    <button id="downloadButton" class="btn btn-success mt-3 w-100">Download as JPG</button>
+</div>
+
+  <script>
+      const templateImage = document.getElementById('templateImage');
+      const templateName = document.getElementById('templateName');
+      const templateClass = document.getElementById('templateClass');
+      const imageInput = document.getElementById('imageInput');
+      const nameInput = document.getElementById('nameInput');
+      const classInput = document.getElementById('classInput');
+      const updateButton = document.getElementById('updateButton');
+      const downloadButton = document.getElementById('downloadButton');
+
+      updateButton.addEventListener('click', () => {
+          const file = imageInput.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                  templateImage.src = e.target.result;
+              };
+              reader.readAsDataURL(file);
+          }
+
+          templateName.textContent = nameInput.value || "Dr Akhere Oshodin";
+          templateClass.textContent = classInput.value || "Class of 1999";
+      });
+
+      downloadButton.addEventListener('click', () => {
+          const container = document.getElementById('templateContainer');
+          html2canvas(container).then((canvas) => {
+              const link = document.createElement('a');
+              link.download = 'template.jpg';
+              link.href = canvas.toDataURL('image/jpeg');
+              link.click();
+          });
+      });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.umd.min.js"
+  ></script>
+</body>
+
+</html>
